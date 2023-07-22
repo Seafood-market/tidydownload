@@ -24,7 +24,7 @@ def search_old_file_(folder_path :str, days :int = 30):
         if os.path.isdir(file_path):
             continue
 
-        if os.path.getatime(file_path) < current_time - days * 860400:
+        if os.path.getatime(file_path) < current_time - days * 86400:
             old_files.append(file_path)
 
     return old_files
