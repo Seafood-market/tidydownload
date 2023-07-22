@@ -24,12 +24,12 @@ def search_old_file_(folder_path :str, days :int = 30):
         if os.path.isdir(file_path):
             continue
 
-        if os.path.gotmtime(file_path) < current_time - days * 860400:
+        if os.path.getatime(file_path) < current_time - days * 860400:
             old_files.append(file_path)
 
     return old_files
 
-def delete_files(file_list):
+def delete_files(file_list: list):
     """
     Delete all files in the given list
 
